@@ -2,68 +2,117 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    height: 100vh;
-    background: lavender;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f45983, #fdfdfd);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.contact-conatiner {
+/* Main container */
+.contact-container {
     background: #fff;
-    padding: 30px, 40px;
-    width: 360px;
-    border-radius: 15px;
-    box-shadow: 0, 20px, 40px rgba(0, 0, 0, 0.2);
+    width: 380px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.contact-conatiner h2 {
+/* Heading */
+.contact-container h2 {
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.input {
+/* Steps */
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+Input group .input-group {
     margin-bottom: 15px;
 }
 
-.input-s label {
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
     font-size: 14px;
-    color: black;
+    color: #555;
 }
 
-.input-s input,
-.input-s textarea {
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #667eea;
+}
+
+/* Buttons */
+button {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
-    border-radius: 8px;
-    border: 1px solid #667eea;
-    outline: none;
-    transition: 0.3s;
-}
-
-.input-s input:focus,
-.input-s textarea:focus {
-    border-color: beige;
-    box-shadow: 0, 0, 5px rgba(102, 126, 234, 0.5);
-}
-
-button {
-    width: 100%;
-    padding: 12px;
     border: none;
     background: #667eea;
-    color: black;
-    font-size: 16px;
-    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover {
-    background: #764ba2;
+    background: #5563d6;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.button-group button {
+    width: 50%;
+}
+
+/* Progress bar */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #667eea;
+    transition: width 0.3s ease;
+}
+
+/* Success message */
+.success-message {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    position: relative;
+    z-index: 10;
 }
